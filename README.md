@@ -4,7 +4,7 @@ CS161 Dual-Credit
 
 Teacher: Mrs. Young
 
-Product Owner:
+Product Owner: Kaden Dudley
 
 SCRUM Master:
 
