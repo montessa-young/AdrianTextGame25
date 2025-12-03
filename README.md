@@ -8,4 +8,4 @@ Product Owner:
 
 SCRUM Master:
 
-Developers:
+Developers: Landon Cleaver
