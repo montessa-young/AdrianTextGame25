@@ -6,6 +6,6 @@ Teacher: Mrs. Young
 
 Product Owner: Kaden Dudley
 
-SCRUM Master:
+SCRUM Master: Kyle Eksund
 
 Developers: Landon Cleaver , lane ziegler, Kreed Eksund, Braysen Jordan
