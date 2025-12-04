@@ -8,4 +8,4 @@ Product Owner: Kaden Dudley
 
 SCRUM Master:
 
-Developers: Landon Cleaver , lane ziegler
+Developers: Landon Cleaver , lane ziegler, Kreed Eksund
