@@ -3,14 +3,14 @@ import time
 def print_slow(text):
     for char in text:
         print(char, end='', flush=True)
-        time.sleep(0.08)
+        time.sleep(0.05)
     print()
 
 def backstory():
-    print_slow("The Noble Knight was called by the king on a quest to retrieve the Great Dragons egg.")
+    print_slow("♘The Noble Knight was called by the king on a quest to retrieve the Great Dragons egg.")
     print_slow("However, the Knight will have to travel far and may encounter many threats along his way...")
-    print_slow("Will the Noble Kight succeed with his quest or will he die on his journey?")
-    print_slow("Your actions will decide.")
+    print_slow("Will the Noble Knight succeed with his quest or will he die on his way?")
+    print_slow("⚔ Your actions will decide.")
 backstory()
 
 
@@ -26,13 +26,13 @@ while True:
     Assumes the traveler starts with 10 gold.
     """
 
-    BOAT_COST = 8
-    gold = 10
+    BOAT_COST = 10
+    gold = 50
 
     print("🌅 An old man by the river offers you a choice. You have 10 Gold Coins.")
 
     # --- Choices ---
-    print("\n1. **Buy the Old Boat** (Cost: 8 Gold)")
+    print("\n1. **Buy the Old Boat** (Cost: 10 Gold)")
     print("2. **Swim Across** (Free, 10% death risk, 30% item loss risk)")
 
     choice = input("\nEnter 1 or 2: ")
