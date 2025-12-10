@@ -17,11 +17,12 @@ def chance_encounter():
 
     if encounter == "friendly rebels":
         rebel_encounter()
+    if encounter == "frost guard":
+        snow_guard()
+    if encounter == "snow leopard":
+        snow_leopard()
     else:
-        # Pass the specific enemy type to the danger handler
-        handle_danger(encounter)
-
-    print(f"--- ENCOUNTER END ---")
+        print(f"--- ENCOUNTER END ---")
 
 
 def rebel_encounter():
@@ -117,31 +118,57 @@ def typing_challenge(context_word):
         return False
 
 
-def handle_danger(enemy):
+def snow_guard():
     """Handles any dangerous encounter (fight/run) using the typing challenge."""
 
     # Ensure choice input is clean
-    choice = input(f"A {enemy} approaches! Do you want to FIGHT or RUN? ").strip().lower()
+    choice = input(f"The snow Gaurd our coming down the path towards you! Do you want to FIGHT or RUN? ").strip().lower()
 
     if choice == "fight":
-        print(f"You stand your ground against the {enemy}!")
+        print(f"You stand your ground against the snow guards!")
         # Run the typing challenge; 'fight' is the primary action word for the challenge
         if typing_challenge(context_word="fight"):
-            print(f"\n>>> You manage to defeat the {enemy}! <<<")
+            print(f"\n>>> You manage to defeat the snow guard! <<<")
             # Potential reward logic could go here
         else:
-            print(f"\n>>> The fight is overwhelming—you are forced to retreat but escape safely. <<<")
+            print(f"\n>>> You where to slow you were captured. <<<")
 
     elif choice == "run":
-        print(f"You try to escape from the {enemy}!")
+        print(f"You try to escape from the snow guard!")
         # Run the typing challenge; 'run' is the primary action word for the challenge
         if typing_challenge(context_word="run"):
             print(f"\n>>> You get away successfully! <<<")
         else:
-            print(f"\n>>> The chase is rough, but you eventually escape unharmed. <<<")
+            print(f"\n>>> You. <<<")
 
     else:
         print("Your hesitation gives you just enough time to back away and avoid danger.")
+
+def snow_leopard():
+    """Handles any dangerous encounter (fight/run) using the typing challenge."""
+
+    # Ensure choice input is clean
+    choice = input(f"you hear somthing in the bushes. Its a snowleapord ! Do you want to FIGHT or RUN? ").strip().lower()
+
+    if choice == "fight":
+        print(f"You stand your ground against the snow leopards!")
+        # Run the typing challenge; 'fight' is the primary action word for the challenge
+        if typing_challenge(context_word="swing"):
+            print(f"\n>>> You manage to defeat the snow leopards! <<<")
+            # Potential reward logic could go here
+        else:
+            print(f"\n>>> You where to slow you were captured. <<<")
+
+    elif choice == "run":
+        print(f"You try to escape from the snow lepord!")
+        # Run the typing challenge; 'run' is the primary action word for the challenge
+        if typing_challenge(context_word="run"):
+            print(f"\n>>> You get away successfully! <<<")
+        else:
+            print(f"\n>>> You. <<<")
+
+    else:
+        print("You where not fast enouf the lepord pounces you are dead.")
 
 
 # This is the entry point for the script execution
