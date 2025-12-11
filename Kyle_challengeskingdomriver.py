@@ -11,7 +11,11 @@ def backstory():
     print_slow("However, the Knight will have to travel far and may encounter many threats along his way...")
     print_slow("Will the Noble Knight succeed with his quest or will he die on his way?")
     print_slow("⚔ Your actions will decide.")
+
+
 backstory()
+
+
 
 
 
