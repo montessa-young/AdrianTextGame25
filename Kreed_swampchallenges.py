@@ -17,8 +17,8 @@ def decide_campsite():
     """
     Prompts the user for a campsite choice and introduces a chance system for outcomes.
     """
-    print("Where would you like to set up camp?")
-    print("Options: 'tree', 'ground', or 'willows'")
+    print_slow("Where would you like to set up camp?")
+    print_slow("Options: 'tree', 'ground', or 'willows'")
     print("-  -  -  -  -  -  -  -  -  -  -  -  -  -  -")
 
     # Get user input
@@ -28,25 +28,59 @@ def decide_campsite():
     chance = random.random() # Generates a number between 0.0 and 1.0
 
     if chance < 0.10: # 10% chance (0.0 to 0.1)
-        print("\n💀 A deadly snake attacks in the night! You have died.")
+        print_slow("\n💀 A deadly snake attacks in the night! You have died.")
     elif chance > .10:
-        print("You have succesfully surivied the night.")
+        print_slow("You go to sleep...")
+        campart = r'''
+        ______
+       /     /\
+      /     /  \
+     /_____/----\_    (
+    "     "          ).
+   _ ___          o (:') o
+  (@))_))        o ~/~~\~ o
+                  o  o  o")
+    '''
+        print(campart)
+        print_slow("✅You have succesfully surivied the night.")
     else:  # 90% chance (0.1 to 1.0)
         # Evaluate the user's choice using if/elif/else for the 'survive' scenarios
         if user_choice == "tree":
-            print("\nDecision: Making camp under a tree.")
+            print_slow("\nDecision: Making camp under a tree.")
         elif user_choice == "ground":
-            print("\nDecision: Making camp on the ground.")
-            print("🌠 You sleep on the ground and you sleep peacefully during the night.")
+            print_slow("\nDecision: Making camp on the ground.")
+            print_slow("🌠 You sleep on the ground and you sleep peacefully during the night.")
         elif user_choice == "willows":
-            print("\nDecision: Making camp under the willows.")
-            print("🦅 You sleep underneath the willows and a bird attacks you!")
+            print_slow("\nDecision: Making camp under the willows.")
+            print_slow("🦅 You sleep underneath the willows and a bird attacks you!")
         else:
             # Handles any input that doesn't match the valid options
-            print(f"\n'{user_choice}' is not a valid option.")
-            print("Please restart the program and choose either 'tree', 'ground', or 'willows'.")
+            print_slow(f"\n'{user_choice}' is not a valid option.")
+            print_slow("Please restart the program and choose either 'tree', 'ground', or 'willows'.")
 
 # Run the function to start the interactive program
 decide_campsite()
+
+def grass_attack():
+    print_slow("You pack up your things and head out on your quest..")
+    print_slow("As you walk you notice a grassy meadow up ahead.")
+    print_slow("You make your way into the meadow and you find some newly made tracks from a big creature.")
+    print_slow("Do you either (run) run away from the area, or do you (draw) draw your sword.")
+    user_choice = input("Enter your choice here: ").lower().strip()
+
+    chance = random.random()
+    if chance < 0.10: # 10% chance (0.0 to 0.1)
+        print_slow("\n💀 A bloodthristy bear pops out, You have died.")
+    elif chance > .10:
+        print_slow("Nothing was there, You keep going..")
+    if user_choice == "run":
+            print_slow("\nDecision: Run.. You try and run away.")
+    elif user_choice == "draw":
+        print("You see a snowy forest up ahead... you head in that direction.")
+
+grass_attack()
+
+
+
 
 
