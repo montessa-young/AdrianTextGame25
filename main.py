@@ -3,5 +3,23 @@
 # This file should only be function calls.
 from Braysen_base_for_encounters import chance_encounter, rebel_encounter, trade_with_rebels, typing_challenge, handle_danger
 from Kreed_swampchallenges import print_slow, decide_campsite
-
 chance_encounter()
+
+
+
+
+
+
+
+
+from Kaden_encounter_2 import chance_encounter
+
+
+
+
+
+
+
+
+
+
