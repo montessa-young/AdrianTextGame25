@@ -1,11 +1,16 @@
 import time
 import random
+import sys
 
 def print_slow(text):
     for char in text:
         print(char, end='', flush=True)
         time.sleep(0.06)
     print()
+def game_over():
+    """A consistent function to call when the player dies."""
+    print_slow("\n--- GAME OVER ---")
+    sys.exit()
 
 def swampchallenges():
     print_slow("As the sun begins to set you decide to make shelter for the night.")
@@ -27,9 +32,10 @@ def decide_campsite():
     # Determine outcome based on a 10% chance to die
     chance = random.random() # Generates a number between 0.0 and 1.0
 
-    if chance < 0.10: # 10% chance (0.0 to 0.1)
+    if chance > 0.10: # 10% chance (0.0 to 0.1)
         print_slow("\n💀 A deadly snake attacks in the night! You have died.")
-    elif chance > .10:
+        game_over()
+    elif chance < .10:
         print_slow("You go to sleep...")
         campart = r'''
         ______
@@ -68,15 +74,38 @@ def grass_attack():
     print_slow("Do you either (run) run away from the area, or do you (draw) draw your sword.")
     user_choice = input("Enter your choice here: ").lower().strip()
 
-    chance = random.random()
-    if chance < 0.10: # 10% chance (0.0 to 0.1)
-        print_slow("\n💀 A bloodthristy bear pops out, You have died.")
-    elif chance > .10:
-        print_slow("Nothing was there, You keep going..")
+    bear_present = random.random() < 0.10
+
     if user_choice == "run":
-            print_slow("\nDecision: Run.. You try and run away.")
+        print_slow("\nDecision: Run. You try and run away from the area.")
+        if bear_present:
+            # If you run and the bear was there
+            print_slow("The sound of your heavy footsteps alerts the creature nearby.")
+            print_slow("💀 A bloodthirsty bear pops out and chases you down. You have died.")
+            game_over()
+        else:
+            # If you run and the area was clear
+            print_slow("You run back the way you came. It seems nothing was there after all.")
+            print_slow("You turn around and carefully keep going.")
+
     elif user_choice == "draw":
-        print("You see a snowy forest up ahead... you head in that direction.")
+        print_slow("\nDecision: Draw. You ready your sword for combat.")
+        if bear_present:
+            # If you draw and the bear was there
+            print_slow("You stand your ground, sword ready.")
+            print_slow("💀 A bloodthirsty bear pops out. It attacks before you can react. You have died.")
+            game_over()
+
+        else:
+            # If you draw and the area was clear
+            print_slow("You wait patiently with your sword drawn. Nothing appears.")
+            print_slow("You see a snowy forest up ahead... you head in that direction.")
+
+    else:
+        # Handles invalid input
+        print_slow(f"\n'{user_choice}' is not a valid option.")
+        print_slow("You hesitate, confused. You decide to keep going anyway.")
+
 
 grass_attack()
 
