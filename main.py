@@ -4,4 +4,24 @@
 from Braysen_base_for_encounters import chance_encounter, rebel_encounter, trade_with_rebels, typing_challenge, handle_danger
 from Kreed_swampchallenges import print_slow, decide_campsite
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+from Landon_snowy.py import print_slow, enter_snow, chance_encounter, rebel_encounter, handle_danger, wizard_enocunter
+
 chance_encounter()

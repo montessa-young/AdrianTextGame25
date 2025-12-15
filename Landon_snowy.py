@@ -94,22 +94,4 @@ def wizard_encounter():
     print_slow("After the Noble Knight gets the magical book he returns to the wizard🧙")
     print_slow("After the wizard got his book back, the noble knight was soon rewarded with a potion designed to kill the evil dragon.")
     print_slow("With the potion in hand the nolbe knight soon leaves the wizard.")
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 wizard_encounter()
