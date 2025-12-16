@@ -17,9 +17,7 @@ enter_snow()
 
 player_inventory = {
     "gold": 10,
-    "herbs": 0,
-    "arrows": 0,
-    "weapons": ["Knight's Sword"]  # starting sword
+    "weapons": ["Knight's Sword"]
 }
 
 def chance_encounter():
@@ -72,3 +70,28 @@ def handle_danger(enemy):
 
 # Run encounter
 chance_encounter()
+
+
+def wizard_encounter():
+    print("                                                                                     ")
+    print("-------------------------------------------------------------------------------------")
+    print("                                                                                     ")
+    print_slow("After making it through the last encounter the Noble Knight continues forward.")
+    print_slow("The Noble knight soon encounters a wizard🧙 and is soon asked to retrieve his magic book from the evil wizard🪄📖")
+    wizard = input("The Noble Knight finds the evil wizards tower and soon finds the wizard asleep. Do you fight him or sneak off with the book(Fight or Sneak)")
+    if wizard == "fight":
+        print_slow("You decide to fight the wizard while he is still sleeping!")
+        if random.random() < 0.7:
+            print_slow("You manage to take down the wizard before he could attack!")
+        else:
+            print_slow("The wizard manages to fend off the knights attack but the knight was still able to escape the wizard with the book")
+    elif wizard == "sneak":
+        print_slow("You decide to sneak up on the wizard and steal the book")
+        if random.random() <0.9:
+            print_slow("You are able to sneak away with the book without being noticed.")
+        else:
+            print_slow("The wizard ends up waking just as you excape with the book!")
+    print_slow("After the Noble Knight gets the magical book he returns to the wizard🧙")
+    print_slow("After the wizard got his book back, the noble knight was soon rewarded with a potion designed to kill the evil dragon.")
+    print_slow("With the potion in hand the nolbe knight soon leaves the wizard.")
+wizard_encounter()

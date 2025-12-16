@@ -67,3 +67,24 @@ from encounter_1_B import kindom_encounter, shop, trade_with_shop
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+from Landon_snowy.py import print_slow, enter_snow, chance_encounter, rebel_encounter, handle_danger, wizard_enocunter
+
+chance_encounter()
