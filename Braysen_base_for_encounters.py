@@ -8,7 +8,7 @@ player_inventory = {
     "arrows": 0
 }
 
-def chance_encounter():
+def snowy_encounter():
     encounters = ["friendly rebels", "frost guard", "snow leopard"]
     encounter = random.choice(encounters)
 
