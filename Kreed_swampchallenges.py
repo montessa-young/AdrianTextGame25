@@ -32,10 +32,10 @@ def decide_campsite():
     # Determine outcome based on a 10% chance to die
     chance = random.random() # Generates a number between 0.0 and 1.0
 
-    if chance > 0.10: # 10% chance (0.0 to 0.1)
+    if chance < 0.10: # 10% chance (0.0 to 0.1)
         print_slow("\n💀 A deadly snake attacks in the night! You have died.")
         game_over()
-    elif chance < .10:
+    elif chance > .10:
         print_slow("You go to sleep...")
         campart = r'''
         ______
