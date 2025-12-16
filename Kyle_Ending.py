@@ -7,6 +7,13 @@ def print_slow(text, delay=0.05):
             time.sleep(delay)
         sys.stdout.write("\n")
 
+def print_slow2(text, delay=0.03):
+        for char in text:
+            sys.stdout.write(char)
+            sys.stdout.flush()
+            time.sleep(delay)
+        sys.stdout.write("\n")
+
 print_slow("You venture on with your magic potion feeling confident that the potion will easily defeat the Frost Kings dragon.🌋")
 print_slow("Eventually reach the volcano and you pause for a moment, thinking about the things you've fought, and all the things yet to come..")
 print_slow("You swallow your worry and enter the volcano entrance.")
@@ -53,12 +60,20 @@ def run_qte():
 
         if elapsed_time <= TIME_LIMIT and user_input == REQUIRED_WORD:
             # --- SUCCESS PATH ---
-            print("\n!!! SUCCESS !!!")
-            print("You quickly threw the potion in time!")
-            print(f"The potion shattered the dragon's ice magic.")
-            print("You lunge an attack, shoving your sword straight into the dragons ice heart.")
-            print("You have slain the dragon! 🐲💥")
+            print_slow2("\n!!! SUCCESS !!!")
+            print_slow2("You quickly threw the potion in time!")
+            print_slow2(f"The potion shattered the dragon's ice magic.")
+            print_slow2("You lunge an attack, shoving your sword straight into the dragons ice heart.💔")
+            print_slow2("You have slain the dragon! 🐲💥")
+            print_slow2("-----------------------------------------------------------------------------")
 
+            print_slow("The Frost King, terrified, quickly hops off of his dragon and attempts to run away.😟🏃")
+            print_slow("Suddenly, the ground beneath him cracks open, revealing hot lava below.")
+            print_slow("He tries to regain his balance but he slips and falls to his firey demise.🔥")
+            print_slow2("-----------------------------------------------------------------------------------")
+            print_slow("As the volcano shakes, you quickly retreive the Great Dragons egg and return home more cautious than ever before.")
+            print_slow("You soon bring the Great Dragons egg to the King and he rewards you with a life time of wealth and respect.")
+            print_slow("Aswell as the Kings bravest soldier to ever live...👑")
         elif elapsed_time > TIME_LIMIT:
             # --- FAILURE PATH: TIMEOUT ---
             print("\n!!! FAILURE !!!")
