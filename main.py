@@ -13,6 +13,20 @@ chance_encounter()
 
 
 from Kaden_encounter_2 import chance_encounter
+from Kyle_challengeskingdomriver import print_slow,backstory,hyper_simple_river_crossing
+chance_encounter()
+
+
+from encounter_1_B import kindom_encounter, shop, trade_with_shop
+
+
+
+
+
+
+
+
+
 
 
 
