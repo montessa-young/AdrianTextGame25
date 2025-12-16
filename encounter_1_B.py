@@ -9,7 +9,7 @@ player_inventory = {
     "arrows": 0
 }
 
-def kindom_encounter():
+def kingdom_encounter():
     encounters = ["shop", "bandits", "wolf"]
     encounter = random.choice(encounters)
 
@@ -169,7 +169,7 @@ bandits()
 #if __name__ == "__main__":
     #main()
     # Call the main game function to start an encounter
-kindom_encounter
+kingdom_encounter
 
 
 

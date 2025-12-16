@@ -174,5 +174,5 @@ def snow_leopard():
 # This is the entry point for the script execution
 if __name__ == "__main__":
     # Call the main game function to start an encounter
-    chance_encounter()
+    snowy_encounter()
 
