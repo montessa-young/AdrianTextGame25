@@ -18,11 +18,10 @@ market_items = [
     {"name": "enchanted Shield",   "price": 500, "level_required": 5},
 ]
 
-def show_market(player):
+def show_market():
     print("\n===== MARKET =====")
     for item in market_items:
-        lock = "LOCKED" if player.level < item["level_required"] else "UNLOCKED"
-        print(f"{item['name']} - ${item['price']} (Level {item['level_required']}) {lock}")
+        print(f"{item['name']} - ${item['price']}")
     print("==================\n")
 
 def buy_item(player, item_name):
@@ -42,19 +41,3 @@ def buy_item(player, item_name):
     print("Item not found.")
 
 
-# --------------------------
-# Example Game Flow
-# --------------------------
-player = Player("Player1")
-
-player.add_money(300)
-player.add_exp(250)
-
-player.stats()
-show_market(player)
-
-buy_item(player, "Wooden Sword")
-buy_item(player, "Steel Armor")
-buy_item(player, "Magic Shield")
-
-player.stats()

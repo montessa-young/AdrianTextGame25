@@ -14,24 +14,26 @@ def print_slow2(text, delay=0.03):
             time.sleep(delay)
         sys.stdout.write("\n")
 
-print_slow("You venture on with your magic potion feeling confident that the potion will easily defeat the Frost Kings dragon.🌋")
-print_slow("Eventually reach the volcano and you pause for a moment, thinking about the things you've fought, and all the things yet to come..")
-print_slow("You swallow your worry and enter the volcano entrance.")
-print_slow("As you enter, you suddently are hit with a strong gust of heat instantly causing you to become tired and dizzy.😓")
-print_slow("Just then you hear roaring in the distance and you quickly pull your potion.")
-print_slow("Quick time event coming soon be prepared❗")
-print_slow("Just then, the Frost King and his loyal dragon appears in front of you with a sudden crash.👑💥")
+def ending():
+    print_slow("You venture on with your magic potion feeling confident that the potion will easily defeat the Frost Kings dragon.🌋")
+    print_slow("Eventually reach the volcano and you pause for a moment, thinking about the things you've fought, and all the things yet to come..")
+    print_slow("You swallow your worry and enter the volcano entrance.")
+    print_slow("As you enter, you suddently are hit with a strong gust of heat instantly causing you to become tired and dizzy.😓")
+    print_slow("Just then you hear roaring in the distance and you quickly pull your potion.")
+    print_slow("Quick time event coming soon be prepared❗")
+    print_slow("Just then, the Frost King and his loyal dragon appears in front of you with a sudden crash.👑💥")
 
 import time
 import sys
 
 # --- Game Constants ---
-REQUIRED_WORD = "THROW"
-TIME_LIMIT = 6.0  # Seconds
+
 
 # --- Game Setup ---
 def run_qte():
     """Runs the Quick Time Event: Dragon's Fury."""
+    REQUIRED_WORD = "THROW"
+    TIME_LIMIT = 6.0  # Seconds
 
     print("=" * 50)
     print("🐉 DRAGON'S FURY: QUICK TIME EVENT! 🐉")

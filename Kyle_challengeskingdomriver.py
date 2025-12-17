@@ -1,4 +1,6 @@
 import time
+import random
+
 
 def print_slow(text):
     for char in text:
@@ -13,23 +15,8 @@ def backstory():
     print_slow("⚔ Your actions will decide.")
 
 
-backstory()
 
-
-
-
-
-
-while True:
-    import random
-    import sys
-
-    def hyper_simple_river_crossing():
-        """
-    Presents the traveler with the two main options and immediately delivers a result.
-    Assumes the traveler starts with 10 gold.
-    """
-
+def hyper_simple_river_crossing():
     BOAT_COST = 10
     gold = 50
 
@@ -47,7 +34,7 @@ while True:
         if gold >= BOAT_COST:
             gold_left = gold - BOAT_COST
             print(f"\n✅ You bought the boat and safely crossed the river. You have {gold_left} gold left.")
-            break
+
 
         else:
             print("\n❌ You don't have enough gold for the boat. No crossing today.")
@@ -60,7 +47,7 @@ while True:
 
         if risk_roll < 0.10: # 10% Death
             print("\n💀 **DEATH.** The current was too strong. Your journey ends.")
-            break
+
         elif risk_roll < 0.30: # 30% Item Loss (assuming you lose 1 gold)
             gold_lost = 1
             gold_left = gold - gold_lost
@@ -70,12 +57,11 @@ while True:
 
         else: # 60% Success
             print("\n✅ **SUCCESS!** You made it across, soaked but safe.")
-            break
+
 
     else:
         print("\n❓ Invalid choice. The old man shrugs and you stand still.")
 
 
-print(hyper_simple_river_crossing())
 
 
