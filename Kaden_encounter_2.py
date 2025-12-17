@@ -9,6 +9,7 @@ player_inventory = {
 }
 
 def trade_with_fishing_villager_encounter():
+    print("The villagers greet you warmly and offer supplies.")
     """Simple trading menu with fishing villager."""
     print("\n--- Fishing Villager Trading Post ---")
     # Use f-strings consistently for cleaner formatting
@@ -61,7 +62,7 @@ def fishing_village_encounter_handler():
         choice = input("Do you want to TRADE or LEAVE? ").strip().lower()
 
         if choice == "trade":
-            trade_with_fishing_villager() # Correct function call
+            trade_with_fishing_villager_encounter() # Correct function call
         elif choice == "leave":
             print("You thank the fishing villager and continue on your journey.")
             break
@@ -69,87 +70,88 @@ def fishing_village_encounter_handler():
             print("The fishing villager doesn't understand. Try typing TRADE or LEAVE.")
 
 
-def typing_challenge(context_word):
-    """A quick time-based typing challenge used for fight or flight outcomes."""
-    words_to_type = [context_word, "quick", "escape", "action", "now"]
-    TIMEOUT = 4 # seconds
 
-    print("\n--- ACTION CHALLENGE ---")
-    print(f"Type the specified word as fast as you can! You have {TIMEOUT} seconds.")
-
-    word_to_type = random.choice(words_to_type)
-    print(f"\nType this word: '{word_to_type}'")
-
-    start_time = time.time()
-    try:
-        # Use strip() to handle accidental spaces
-        user_input = input("Your turn: ").strip()
-        end_time = time.time()
-        time_taken = end_time - start_time
-
-        if user_input == word_to_type and time_taken < TIMEOUT:
-            print(f"SUCCESS! You typed it in {time_taken:.2f} seconds.")
-            return True
-        else:
-            print("\n--- FAILED CHALLENGE! ---")
-            if user_input != word_to_type:
-                print(f"You typed '{user_input}', but the word was '{word_to_type}'.")
-            else:
-                print(f"You took too long! You took {time_taken:.2f} seconds.")
-            return False
-    except (KeyboardInterrupt, EOFError):
-        # Handle cases where user exits input
-        print("\nChallenge abandoned.")
-        return False
-
-
-def swamp_goblin_encounter():
-    """Handles dangerous encounter with a goblin (fight/run)."""
-    choice = input(f"The swamp goblin is coming down the path towards you! Do you want to FIGHT or RUN? ").strip().lower()
-
-    if choice == "fight":
-        print(f"You stand your ground against the swamp goblin!")
-        if typing_challenge(context_word="fight"):
-            print(f"\n>>> You manage to defeat the swamp goblin! <<<")
-        else:
-            print(f"\n>>> You were too slow and were captured. <<<") # Fixed 'where' typo
-
-    elif choice == "run":
-        print(f"You try to escape from the swamp goblin!")
-        if typing_challenge(context_word="run"):
-            print(f"\n>>> You get away successfully! <<<")
-        else:
-            print(f"\n>>> You were too slow to escape and were captured. <<<")
-
-    else:
-        # Provide a default outcome for invalid input
-        print("Your hesitation gives you just enough time to back away and avoid danger.")
-
-
-def alligator_encounter():
-    """Handles dangerous encounter with an alligator (fight/run)."""
-    choice = input(f"You hear something in the water. It's an alligator! Do you want to FIGHT or RUN? ").strip().lower()
-
-    if choice == "fight":
-        print(f"You stand your ground against the alligator!")
-        if typing_challenge(context_word="swing"):
-            print(f"\n>>> You manage to defeat the alligator! <<<")
-        else:
-            print(f"\n>>> You were too slow and were defeated. <<<")
-
-    elif choice == "run":
-        print(f"You try to escape from the alligator!")
-        if typing_challenge(context_word="run"):
-            print(f"\n>>> You get away successfully! <<<")
-        else:
-            print(f"\n>>> You were not fast enough the alligator brings you under water. You Died. <<<")
-
-    else:
-        # Provide a default outcome for invalid input
-        print("You were not fast enough the alligator brings you under water. You Died.")
 
 
 def swamp_encounter():
+    def typing_challenge():
+        """A quick time-based typing challenge used for fight or flight outcomes."""
+        words_to_type = ["quick", "escape", "action", "now"]
+        TIMEOUT = 4 # seconds
+
+        print("\n--- ACTION CHALLENGE ---")
+        print(f"Type the specified word as fast as you can! You have {TIMEOUT} seconds.")
+
+        word_to_type = random.choice(words_to_type)
+        print(f"\nType this word: '{word_to_type}'")
+
+        start_time = time.time()
+        try:
+            # Use strip() to handle accidental spaces
+            user_input = input("Your turn: ").strip()
+            end_time = time.time()
+            time_taken = end_time - start_time
+
+            if user_input == word_to_type and time_taken < TIMEOUT:
+                print(f"SUCCESS! You typed it in {time_taken:.2f} seconds.")
+                return True
+            else:
+                print("\n--- FAILED CHALLENGE! ---")
+                if user_input != word_to_type:
+                    print(f"You typed '{user_input}', but the word was '{word_to_type}'.")
+                else:
+                    print(f"You took too long! You took {time_taken:.2f} seconds.")
+                return False
+        except (KeyboardInterrupt, EOFError):
+            # Handle cases where user exits input
+            print("\nChallenge abandoned.")
+            return False
+
+
+    def swamp_goblin_encounter():
+        """Handles dangerous encounter with a goblin (fight/run)."""
+        choice = input(f"The swamp goblin is coming down the path towards you! Do you want to FIGHT or RUN? ").strip().lower()
+
+        if choice == "fight":
+            print(f"You stand your ground against the swamp goblin!")
+            if typing_challenge():
+                print(f"\n>>> You manage to defeat the swamp goblin! <<<")
+            else:
+                print(f"\n>>> You were too slow and were captured. <<<") # Fixed 'where' typo
+
+        elif choice == "run":
+            print(f"You try to escape from the swamp goblin!")
+            if typing_challenge():
+                print(f"\n>>> You get away successfully! <<<")
+            else:
+                print(f"\n>>> You were too slow to escape and were captured. <<<")
+
+        else:
+            # Provide a default outcome for invalid input
+            print("Your hesitation gives you just enough time to back away and avoid danger.")
+
+
+    def alligator_encounter():
+        """Handles dangerous encounter with an alligator (fight/run)."""
+        choice = input(f"You hear something in the water. It's an alligator! Do you want to FIGHT or RUN? ").strip().lower()
+
+        if choice == "fight":
+            print(f"You stand your ground against the alligator!")
+            if typing_challenge():
+                print(f"\n>>> You manage to defeat the alligator! <<<")
+            else:
+                print(f"\n>>> You were too slow and were defeated. <<<")
+
+        elif choice == "run":
+            print(f"You try to escape from the alligator!")
+            if typing_challenge():
+                print(f"\n>>> You get away successfully! <<<")
+            else:
+                print(f"\n>>> You were not fast enough the alligator brings you under water. You Died. <<<")
+
+        else:
+            # Provide a default outcome for invalid input
+            print("You were not fast enough the alligator brings you under water. You Died.")
     # Standardize all list items to lowercase for easy comparison
     # Added "small fishing village" to match the handler name better
     encounters = ["swamp goblin", "alligator", "small fishing village"]

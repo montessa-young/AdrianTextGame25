@@ -16,7 +16,6 @@ def swampchallenges():
     print_slow("As the sun begins to set you decide to make shelter for the night.")
     print_slow("Do you either, (tree) make camp under a tree, (ground) make camp on the ground, or (willows) make shelter under the willows.")
 
-swampchallenges()
 
 def decide_campsite():
     """
@@ -64,8 +63,7 @@ def decide_campsite():
             print_slow(f"\n'{user_choice}' is not a valid option.")
             print_slow("Please restart the program and choose either 'tree', 'ground', or 'willows'.")
 
-# Run the function to start the interactive program
-decide_campsite()
+
 
 def grass_attack():
     print_slow("You pack up your things and head out on your quest..")
@@ -107,7 +105,7 @@ def grass_attack():
         print_slow("You hesitate, confused. You decide to keep going anyway.")
 
 
-grass_attack()
+
 
 
 

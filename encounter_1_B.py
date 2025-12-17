@@ -163,13 +163,12 @@ def wolf():
     elif choice == "run":
         print(f"You leave the farmer in distress!")
 
-bandits()
+
 
 # This is the entry point for the script execution
 #if __name__ == "__main__":
     #main()
     # Call the main game function to start an encounter
-kindom_encounter
 
 
 

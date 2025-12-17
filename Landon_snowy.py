@@ -13,7 +13,7 @@ def enter_snow():
     print_slow("After making it through the night the Noble Knight continued onward")
     print_slow("Eventually the Noble Knight makes it into a snowy mountain region 🏔")
     print_slow("The knight continues forward and encounters: ")
-enter_snow()
+
 
 player_inventory = {
     "gold": 10,
@@ -21,6 +21,7 @@ player_inventory = {
 }
 
 def chance_encounter():
+
     encounters = ["friendly rebels", "frost guard", "snow leopard"]
     encounter = random.choice(encounters)
 
@@ -68,8 +69,6 @@ def handle_danger(enemy):
         print_slow("Your hesitation gives you just enough time to back away and avoid danger.")
 
 
-# Run encounter
-chance_encounter()
 
 
 def wizard_encounter():
@@ -94,4 +93,3 @@ def wizard_encounter():
     print_slow("After the Noble Knight gets the magical book he returns to the wizard🧙")
     print_slow("After the wizard got his book back, the noble knight was soon rewarded with a potion designed to kill the evil dragon.")
     print_slow("With the potion in hand the nolbe knight soon leaves the wizard.")
-wizard_encounter()
